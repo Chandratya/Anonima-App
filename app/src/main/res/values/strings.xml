@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Anonima</string>
+    <string name="minimum_password">6</string>
+</resources>

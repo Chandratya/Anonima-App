@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "262722187188",
+    "firebase_url": "https://anonimaapp-9a08e.firebaseio.com",
+    "project_id": "anonimaapp-9a08e",
+    "storage_bucket": "anonimaapp-9a08e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:262722187188:android:ee4b25f6e18991ff",
+        "android_client_info": {
+          "package_name": "com.krein.chandratya.anonimaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "262722187188-ufimrrhl26iur8ssq54topb5o9curv9d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgeGxE1T2hrLylDXeZ0QyaeKxHTzL2tGY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
