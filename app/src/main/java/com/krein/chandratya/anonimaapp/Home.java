@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 
@@ -42,14 +43,25 @@ public class Home extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_logout) {
-            mAuth.signOut();
-            Intent toLogin = new Intent(Home.this, login.class);
-            startActivity(toLogin);
-            Toast.makeText(Home.this,"Logout berhasil", Toast.LENGTH_SHORT).show();
-            return true;
+        switch (item.getItemId()){
+            case R.id.action_logout:
+
+                FirebaseAuth.getInstance().signOut();
+                finish();
+                startActivity(new Intent(this, login.class ));
+                Toast.makeText(this, "Logout berhasil", Toast.LENGTH_SHORT).show();
+                break;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void nearby(View view) {
+        Intent startActivity = new Intent(Home.this, nearby.class);
+        startActivity(startActivity);
+    }
+    public void register(View view) {
+        Intent startActivity = new Intent(Home.this, register.class);
+        startActivity(startActivity);
     }
 }

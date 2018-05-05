@@ -23,7 +23,21 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.krein.chandratya.anonimaapp.login" />
         </activity>
-        <activity android:name=".Home"></activity>
+        <activity android:name=".Home" />
+        <activity
+            android:name=".nearby"
+            android:label="@string/title_activity_nearby"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Post">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.krein.chandratya.anonimaapp.nearby" />
+        </activity>
+        <activity android:name=".DetailPost">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.krein.chandratya.anonimaapp.nearby" />
+        </activity>
     </application>
 
 </manifest>
