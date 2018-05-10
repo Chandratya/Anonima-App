@@ -1,19 +1,17 @@
 package com.krein.chandratya.anonimaapp;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.storage.FirebaseStorage;
 
-public class Post extends AppCompatActivity {
+public class Comment extends AppCompatActivity {
     private EditText content;
     private Button btnPostNearby;
 
@@ -21,9 +19,9 @@ public class Post extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_post);
+        setContentView(R.layout.activity_comment);
         content = (EditText)findViewById(R.id.content);
-        btnPostNearby = (Button)findViewById(R.id.btnPostNearby);
+        btnPostNearby = (Button)findViewById(R.id.btnComment);
 
         auth=FirebaseAuth.getInstance();
         if(auth.getCurrentUser()!=null){
@@ -35,12 +33,12 @@ public class Post extends AppCompatActivity {
                     String nama = auth.getCurrentUser().getEmail();
                     String txt = content.getText().toString();
 
-                    DatabaseReference tbPosting = FirebaseDatabase.getInstance().getReference("Postings");
-                    String postKey = tbPosting.push().getKey();
-                    PostingModel posting = new PostingModel(userId, nama, txt, "USER");
-                    posting.setKey(postKey);
-                    tbPosting.child(postKey).setValue(posting);
-                    Toast.makeText(Post.this, "Posted!", Toast.LENGTH_SHORT).show();
+                    DatabaseReference tbComment = FirebaseDatabase.getInstance().getReference("Comments");
+                    String postKey = tbComment.push().getKey();
+                    CommentModel comment = new CommentModel(userId, nama, txt, "USER");
+                    comment.setKey(postKey);
+                    tbComment.child(postKey).setValue(comment);
+                    Toast.makeText(Comment.this, "Posted!", Toast.LENGTH_SHORT).show();
                     finish();
                 }
             });

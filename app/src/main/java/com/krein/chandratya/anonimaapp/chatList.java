@@ -13,33 +13,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 
-import com.google.firebase.auth.FirebaseAuth;
-
-public class nearby extends AppCompatActivity
+public class chatList extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private TextView disName;
-    private FirebaseAuth auth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nearby);
-
-        nearbyPost fragment = new nearbyPost();
-        getSupportFragmentManager().beginTransaction().replace(R.id.container1,fragment,"Nearbypost").commit();
-        getSupportFragmentManager().popBackStack();
-
+        setContentView(R.layout.activity_chat_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(nearby.this, Post.class);
-                startActivity(intent);
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
             }
         });
 
@@ -66,7 +57,7 @@ public class nearby extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.nearby, menu);
+        getMenuInflater().inflate(R.menu.chat_list, menu);
         return true;
     }
 
@@ -92,14 +83,14 @@ public class nearby extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            Intent intent = new Intent(nearby.this, Home.class);
+            Intent intent = new Intent(chatList.this, Home.class);
             startActivity(intent);
             // Handle the camera action
         } else if (id == R.id.nav_profile) {
 
 
         } else if (id == R.id.nav_message) {
-            Intent intent = new Intent(nearby.this, chatList.class);
+            Intent intent = new Intent(chatList.this, chatList.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_report) {
@@ -110,6 +101,4 @@ public class nearby extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-
 }

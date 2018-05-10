@@ -27,7 +27,7 @@ import java.util.ArrayList;
 public class nearbyPost extends Fragment {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter NearbyAdapter;
-    private ArrayList<NearbyCons> listNearby;
+    private ArrayList<PostingModel> listNearby;
     private NearbyAdapter mAdapter;
 
 
@@ -52,12 +52,14 @@ public class nearbyPost extends Fragment {
     public void onStart() {
         super.onStart();
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        database.getReference("postnearby").addValueEventListener(new ValueEventListener() {
+
+        DatabaseReference tbPosting = FirebaseDatabase.getInstance().getReference("Postings");
+        tbPosting.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 listNearby.clear();
                 for(DataSnapshot ds : dataSnapshot.getChildren()){
-                    NearbyCons post = ds.getValue(NearbyCons.class);
+                    PostingModel post = ds.getValue(PostingModel.class);
 
                     listNearby.add(post);
                 }

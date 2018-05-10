@@ -1,13 +1,19 @@
 package com.krein.chandratya.anonimaapp;
 
 import android.content.Context;
+import android.content.Intent;
+import android.media.Image;
+import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,11 +22,12 @@ import java.util.List;
  */
 
 public class NearbyAdapter extends RecyclerView.Adapter<NearbyAdapter.MyViewHolder> {
-    private List<NearbyCons> listNearby1;
+    private List<PostingModel> listNearby1;
     private Context context;
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView namaUser, Konten,idPosting;
+        public TextView namaUser, Konten, idPosting;
         public CardView cvNearby;
+        public ImageButton btnComment;
 
         public MyViewHolder(View view) {
             super(view);
@@ -28,9 +35,10 @@ public class NearbyAdapter extends RecyclerView.Adapter<NearbyAdapter.MyViewHold
             Konten = (TextView)view.findViewById(R.id.isikonten);
             idPosting = (TextView)view.findViewById(R.id.idPosting);
             cvNearby=(CardView)view.findViewById(R.id.cdPost);
+            btnComment = (ImageButton)view.findViewById(R.id.btnComment);
         }
     }
-    public NearbyAdapter(Context context, ArrayList<NearbyCons> nearbyList){
+    public NearbyAdapter(Context context, ArrayList<PostingModel> nearbyList){
         this.context = context;
         this.listNearby1 = nearbyList;
     }
@@ -44,11 +52,21 @@ public class NearbyAdapter extends RecyclerView.Adapter<NearbyAdapter.MyViewHold
 
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
-    final NearbyCons post = listNearby1.get(position);
-    holder.namaUser.setText(post.getUser());
+    public void onBindViewHolder(final MyViewHolder holder, int position) {
+    final PostingModel post = listNearby1.get(position);
+    holder.namaUser.setText(""+post.getUserName().split("@")[0]);
     holder.Konten.setText(post.getPosting());
-    holder.idPosting.setText(post.getKeyComment());
+    holder.idPosting.setText(post.getKey());
+    holder.btnComment.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("value", (Serializable) listNearby1);
+            Intent abc = new Intent(context, DetailPost.class);
+
+            Intent intent = abc.putExtra(bundle);
+        }
+    });
     }
 
     @Override

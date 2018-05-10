@@ -38,6 +38,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.krein.chandratya.anonimaapp.nearby" />
         </activity>
+        <activity
+            android:name=".chatList"
+            android:label="@string/title_activity_chat_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".chatActivity"></activity>
     </application>
 
 </manifest>
