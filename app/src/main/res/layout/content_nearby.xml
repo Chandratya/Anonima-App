@@ -8,6 +8,8 @@
     tools:context="com.krein.chandratya.anonimaapp.nearby"
     tools:showIn="@layout/app_bar_nearby">
 
+
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

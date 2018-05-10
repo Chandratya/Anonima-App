@@ -7,10 +7,13 @@ import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import java.io.Serializable;
@@ -27,7 +30,7 @@ public class NearbyAdapter extends RecyclerView.Adapter<NearbyAdapter.MyViewHold
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView namaUser, Konten, idPosting;
         public CardView cvNearby;
-        public ImageButton btnComment;
+        public ImageButton btnComment,btnMenuItem;
 
         public MyViewHolder(View view) {
             super(view);
@@ -36,6 +39,7 @@ public class NearbyAdapter extends RecyclerView.Adapter<NearbyAdapter.MyViewHold
             idPosting = (TextView)view.findViewById(R.id.idPosting);
             cvNearby=(CardView)view.findViewById(R.id.cdPost);
             btnComment = (ImageButton)view.findViewById(R.id.btnComment);
+            btnMenuItem = (ImageButton)view.findViewById(R.id.btnMenuItem);
         }
     }
     public NearbyAdapter(Context context, ArrayList<PostingModel> nearbyList){
@@ -60,11 +64,32 @@ public class NearbyAdapter extends RecyclerView.Adapter<NearbyAdapter.MyViewHold
     holder.btnComment.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Bundle bundle = new Bundle();
-            bundle.putSerializable("value", (Serializable) listNearby1);
-            Intent abc = new Intent(context, DetailPost.class);
+            Intent itu = new Intent(holder.itemView.getContext(), DetailPost.class);
+            itu.putExtra("ITEM_POSTING", post);
+            holder.itemView.getContext().startActivity(itu);
+        }
+    });
 
-            Intent intent = abc.putExtra(bundle);
+    holder.btnMenuItem.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            PopupMenu popup = new PopupMenu(holder.itemView.getContext(),view);
+            MenuInflater inflater = popup.getMenuInflater();
+            inflater.inflate(R.menu.chat_menu, popup.getMenu());
+            popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                @Override
+                public boolean onMenuItemClick(MenuItem menuItem) {
+                    switch (menuItem.getItemId()){
+                        case R.id.action_chat:
+                            Intent chat =new Intent(holder.itemView.getContext(), userChat.class);
+                            chat.putExtra("ITEM_POSTING", post);
+                            holder.itemView.getContext().startActivity(chat);
+                            break;
+                    }
+                    return false;
+                }
+            });
+            popup.show();
         }
     });
     }

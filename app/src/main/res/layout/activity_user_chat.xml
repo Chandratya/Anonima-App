@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+
+        android:clipToPadding="false"
+        android:gravity="left"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.9">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/ChatViewList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            </android.support.v7.widget.RecyclerView>
+        </ScrollView>
+        <!--<android.support.v7.widget.CardView-->
+        <!--android:foreground="?android:attr/selectableItemBackground"-->
+        <!--android:clickable="true"-->
+
+        <!--android:id="@+id/cdPost"-->
+        <!--android:layout_width="300dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="10dp"-->
+        <!--&gt;-->
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:orientation="vertical"-->
+
+        <!--&gt;-->
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+        <!--<TextView-->
+        <!--android:id="@+id/user"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_weight="0.9"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="left"-->
+        <!--android:padding="10dp"-->
+        <!--android:text="Username"-->
+
+        <!--android:textColor="@color/colorPrimary"/>-->
+
+
+
+        <!--&lt;!&ndash;<ImageButton&ndash;&gt;-->
+
+        <!--&lt;!&ndash;android:layout_width="0dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_weight="0.1"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:backgroundTint="@android:color/transparent"&ndash;&gt;-->
+        <!--&lt;!&ndash;app:srcCompat="@drawable/ic_more_vert" />&ndash;&gt;-->
+
+
+        <!--</LinearLayout>-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/isikonten"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="center"-->
+        <!--android:text="ASDASDAASDASDASDASD"-->
+        <!--android:padding="10dp"-->
+        <!--android:textColor="@android:color/black"/>-->
+
+        <!---->
+
+
+        <!--</LinearLayout>-->
+
+
+        <!--</android.support.v7.widget.CardView>-->
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.12">
+        <EditText
+            android:id="@+id/txtChatTxt"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.8"
+            android:ems="10"
+            android:hint="Write a Reply..."
+            android:inputType="textPersonName" />
+
+        <ImageView
+            android:id="@+id/btnChatSend"
+            android:clickable="true"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.2"
+            app:srcCompat="@drawable/ic_menu_send"
+
+            />
+    </LinearLayout>
+
+
+</LinearLayout>

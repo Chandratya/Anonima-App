@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AnonimaApp.iml" filepath="$PROJECT_DIR$/AnonimaApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Anonima-App.iml" filepath="$PROJECT_DIR$/Anonima-App.iml" />
+      <module fileurl="file://C:\Users\RazerBlade\Documents\Android\Anonima-App\AnonimaApp.iml" filepath="C:\Users\RazerBlade\Documents\Android\Anonima-App\AnonimaApp.iml" />
       <module fileurl="file://C:\Users\Leidy\AndroidStudioProjects\Anonima-App-master\AnonimaApp.iml" filepath="C:\Users\Leidy\AndroidStudioProjects\Anonima-App-master\AnonimaApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://C:\Users\Leidy\AndroidStudioProjects\AnonimaApp\app\app.iml" filepath="C:\Users\Leidy\AndroidStudioProjects\AnonimaApp\app\app.iml" />
+      <module fileurl="file://C:\Users\RazerBlade\Documents\Android\Anonima-App\app\app.iml" filepath="C:\Users\RazerBlade\Documents\Android\Anonima-App\app\app.iml" />
     </modules>
   </component>
 </project>

@@ -42,7 +42,9 @@
             android:name=".chatList"
             android:label="@string/title_activity_chat_list"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".chatActivity"></activity>
+        <activity android:name=".chatActivity" />
+        <activity android:name=".userChat" />
+        <activity android:name=".ChatListActivity"></activity>
     </application>
 
 </manifest>

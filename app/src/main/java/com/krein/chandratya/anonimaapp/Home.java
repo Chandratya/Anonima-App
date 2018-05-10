@@ -51,6 +51,9 @@ public class Home extends AppCompatActivity {
                 startActivity(new Intent(this, login.class ));
                 Toast.makeText(this, "Logout berhasil", Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.action_chatroom:
+                startActivity(new Intent(this, ChatListActivity.class));
+                break;
         }
 
         return super.onOptionsItemSelected(item);

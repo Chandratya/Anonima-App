@@ -10,7 +10,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class DetailPost extends AppCompatActivity {
     FirebaseAuth auth;
-    private TextView postDetail;
+    private TextView postDetail, vKonten, vUserKonten;
 
 
     @Override
@@ -20,12 +20,15 @@ public class DetailPost extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         Intent intent = getIntent();
-        final String detail = intent.getStringExtra("DETAIL_POST");
+        PostingModel detail = (PostingModel) intent.getSerializableExtra("ITEM_POSTING");
 
         postDetail = findViewById(R.id.isikonten);
+        vKonten=(TextView)findViewById(R.id.isikonten);
+        vUserKonten=(TextView)findViewById(R.id.user);
 
+        vKonten.setText(""+detail.getPosting());
+        vUserKonten.setText(""+detail.getUserName().split("@")[0]);
 
-        postDetail.setText(detail);
 
     }
 

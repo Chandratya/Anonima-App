@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.krein.chandratya.anonimaapp.Home">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_chatroom"
+        android:id="@+id/action_chat"
         android:orderInCategory="100"
         android:title="Chat"
         app:showAsAction="never" />
     <item
-        android:id="@+id/action_logout"
+        android:id="@+id/action_report"
         android:orderInCategory="100"
-        android:title="Logout"
+        android:title="Report"
         app:showAsAction="never" />
+
+
 </menu>

@@ -2,13 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <TextView
-        android:id="@+id/idPosting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <LinearLayout
 
@@ -19,11 +14,13 @@
         android:orientation="vertical">
 
         <android.support.v7.widget.CardView
-            android:id="@+id/cdPost"
+            android:id="@+id/cdChat"
             android:layout_width="match_parent"
-
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
             android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground">
 
@@ -39,7 +36,7 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/user"
+                        android:id="@+id/lblChatItemUser"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.9"
@@ -50,35 +47,24 @@
                         android:textColor="@color/colorPrimary" />
 
 
-                    <ImageButton
-                        android:id="@+id/btnMenuItem"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.1"
-                        android:backgroundTint="@android:color/transparent"
-                        app:srcCompat="@drawable/ic_more_vert" />
+                    <!--<ImageButton-->
+
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_weight="0.1"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:backgroundTint="@android:color/transparent"-->
+                    <!--app:srcCompat="@drawable/ic_more_vert" />-->
 
 
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/isikonten"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/lblChatItemTXT"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
                     android:padding="10dp"
                     android:text="ASDASDAASDASDASDASD"
                     android:textColor="@android:color/black" />
-
-                <ImageButton
-                    android:id="@+id/btnComment"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|end"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="300dp"
-                    android:layout_marginTop="8dp"
-                    android:src="@drawable/ic_message" />
 
 
             </LinearLayout>
@@ -87,5 +73,5 @@
         </android.support.v7.widget.CardView>
 
     </LinearLayout>
-
 </LinearLayout>
+
